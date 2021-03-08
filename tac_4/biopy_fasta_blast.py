@@ -30,8 +30,8 @@ for i in SeqIO.parse(arquivo_entrada, "fasta"):
 
 
 #PARTE BLAST
-sequencia_desconhecida = open(input("Digite o caminho do arquivo fasta: "))
-base_dados = open(input("Digite o caminho do arquivo multi-fasta de proteínas: "))
+sequencia_desconhecida = input("Digite o caminho do arquivo fasta: ")
+base_dados = input("Digite o caminho do arquivo multi-fasta de proteínas: ")
 meuOutput = r"C:/Users/gabri/PycharmProjects/tac4/tac_4/meuOutput.txt"
 blastx_path = r"C:/Arquivos de programas/NCBI/blast-2.11.0+/bin/blastx.exe"
 
@@ -66,7 +66,9 @@ for linha in s:
     if len(hit) != 12:
         break
 
-
-    print("Score = %s" % hit[bitscore])
+    #hit[bitscore] = list(map(int, hit[bitscore]))
+    #print("Score = %s" % hit[bitscore])
+    #maximo = hit[bitscore].max()
+    print("Score = {}".format(hit[bitscore]))
 
 blast_result.close()
